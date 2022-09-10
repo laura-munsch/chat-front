@@ -1,7 +1,7 @@
 import React from "react";
 import Conversation from "./Conversation";
 import Register from "./Register";
-import UserList from "./UsersList";
+import UsersList from "./UsersList";
 
 const App = () => {
   const [currentUser, setCurrentUser] = React.useState();
@@ -14,7 +14,7 @@ const App = () => {
         <Register setCurrentUser={setCurrentUser} />
       </header>
 
-      <UserList
+      <UsersList
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
         setContact={setContact}

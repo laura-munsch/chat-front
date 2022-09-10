@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import CurrentUser from "./CurrentUser";
 
-const UserList = (props) => {
+const UsersList = (props) => {
   const [users, setUsers] = React.useState([]);
 
   React.useEffect(() => {
@@ -13,6 +13,7 @@ const UserList = (props) => {
         props.setCurrentUser(response.data[0]);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.currentUser]);
 
   return (
@@ -33,4 +34,4 @@ const UserList = (props) => {
   );
 };
 
-export default UserList;
+export default UsersList;

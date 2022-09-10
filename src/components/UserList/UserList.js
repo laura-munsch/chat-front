@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import CurrentUser from "./CurrentUser";
+import CurrentUser from "../CurrentUser/CurrentUser";
 
 const UsersList = (props) => {
   const [users, setUsers] = React.useState([]);
@@ -17,10 +17,10 @@ const UsersList = (props) => {
   }, [props.currentUser]);
 
   return (
-    <aside>
+    <aside className="chat__sidebar">
       <CurrentUser currentUser={props.currentUser} />
 
-      <h2>Users :</h2>
+      <h2>Contacts :</h2>
 
       <ul>
         {users.map((user) => (

@@ -1,0 +1,13 @@
+@import "/src/styles/global";
+
+.chat {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+
+  &__header {
+    display: grid;
+    grid-column: 1/3;
+    grid-template-columns: 1fr 3fr;
+    justify-content: space-between;
+  }
+}

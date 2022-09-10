@@ -1,9 +1,11 @@
 import React from "react";
+import Conversation from "./Conversation";
 import Register from "./Register";
 import UserList from "./UsersList";
 
 const App = () => {
   const [currentUser, setCurrentUser] = React.useState();
+  const [contact, setContact] = React.useState();
 
   return (
     <section>
@@ -12,7 +14,12 @@ const App = () => {
         <Register setCurrentUser={setCurrentUser} />
       </header>
 
-      <UserList currentUser={currentUser} />
+      <UserList
+        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
+        setContact={setContact}
+      />
+      <Conversation currentUser={currentUser} contact={contact} />
     </section>
   );
 };

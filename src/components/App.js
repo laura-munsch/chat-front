@@ -19,7 +19,9 @@ const App = () => {
         setCurrentUser={setCurrentUser}
         setContact={setContact}
       />
-      <Conversation currentUser={currentUser} contact={contact} />
+      <main>
+        <Conversation currentUser={currentUser} contact={contact} />
+      </main>
     </section>
   );
 };

@@ -19,12 +19,20 @@ const Conversation = (props) => {
     }
   }, [props.currentUser, props.contact]);
 
+  if (!props.contact) {
+    return <p>Veuillez sélectionner un contact dans la liste.</p>;
+  }
+
   return (
-    <section>
+    <div>
       {conversation.map((message) => (
         <p key={message.id}>{message.content}</p>
       ))}
-    </section>
+
+      {conversation.length === 0 && (
+        <p>Vous n'avez pas encore échangé de messages avec cette personne.</p>
+      )}
+    </div>
   );
 };
 

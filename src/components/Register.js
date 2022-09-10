@@ -21,6 +21,7 @@ const Register = (props) => {
       })
       .then((response) => {
         props.setCurrentUser(response.data);
+        e.target.reset();
       })
       .catch((error) => {
         let phoneError = error.response.data.errors.phone;

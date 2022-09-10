@@ -1,14 +1,14 @@
 import React from "react";
 import axios from "axios";
 
-const UserList = () => {
+const UserList = (props) => {
   const [users, setUsers] = React.useState([]);
 
   React.useEffect(() => {
     axios.get(process.env.REACT_APP_API_URL + "/users/").then((response) => {
       setUsers(response.data);
     });
-  }, []);
+  }, [props.currentUser]);
 
   return (
     <aside>

@@ -5,10 +5,6 @@ import UserList from "./UsersList";
 const App = () => {
   const [currentUser, setCurrentUser] = React.useState();
 
-  React.useEffect(() => {
-    console.log(currentUser);
-  }, [currentUser]);
-
   return (
     <section>
       <header>

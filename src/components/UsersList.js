@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import CurrentUser from "./CurrentUser";
 
 const UserList = (props) => {
   const [users, setUsers] = React.useState([]);
@@ -12,6 +13,8 @@ const UserList = (props) => {
 
   return (
     <aside>
+      <CurrentUser currentUser={props.currentUser} />
+
       <h2>Users :</h2>
 
       <ul>

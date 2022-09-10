@@ -21,9 +21,7 @@ const App = () => {
         setContact={setContact}
       />
 
-      <main>
-        <Conversation currentUser={currentUser} contact={contact} />
-      </main>
+      <Conversation currentUser={currentUser} contact={contact} />
     </section>
   );
 };

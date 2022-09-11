@@ -1,7 +1,7 @@
 import React from "react";
 import Conversation from "../Conversation/Conversation";
 import Register from "../Register/Register";
-import UsersList from "../UserList/UserList";
+import UsersList from "../UsersList/UsersList";
 import "./app.scss";
 
 const App = () => {
@@ -18,6 +18,7 @@ const App = () => {
       <UsersList
         currentUser={currentUser}
         setCurrentUser={setCurrentUser}
+        contact={contact}
         setContact={setContact}
       />
 

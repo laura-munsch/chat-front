@@ -4,6 +4,7 @@ import "./conversation.scss";
 
 const Conversation = (props) => {
   const [conversation, setConversation] = React.useState([]);
+  const [error, setError] = React.useState();
 
   const isSentByCurrentUser = (senderId) => {
     if (senderId === props.currentUser.id) {
@@ -23,21 +24,24 @@ const Conversation = (props) => {
           process.env.REACT_APP_API_URL + `/messages/by-users/${user1}/${user2}`
         )
         .then((response) => {
+          setError();
           setConversation(response.data);
+
+          if (response.data.length === 0) {
+            setError(
+              "Vous n'avez pas encore échangé de messages avec cette personne."
+            );
+          }
         });
+    } else {
+      setError("Veuillez sélectionner un contact dans la liste.");
     }
   }, [props.currentUser, props.contact]);
 
-  if (!props.contact) {
-    return (
-      <main className="conversation">
-        <p>Veuillez sélectionner un contact dans la liste.</p>
-      </main>
-    );
-  }
-
   return (
     <main className="conversation">
+      <p className="conversation__error">{error}</p>
+
       {conversation.map((message) => (
         <p
           key={message.id}
@@ -48,10 +52,6 @@ const Conversation = (props) => {
           {message.content}
         </p>
       ))}
-
-      {conversation.length === 0 && (
-        <p>Vous n'avez pas encore échangé de messages avec cette personne.</p>
-      )}
     </main>
   );
 };

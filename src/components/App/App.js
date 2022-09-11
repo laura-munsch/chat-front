@@ -1,29 +1,18 @@
-import React from "react";
-import Conversation from "../Conversation/Conversation";
-import Register from "../Register/Register";
-import UsersList from "../UsersList/UsersList";
-import "./app.scss";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "../Home/Home";
+import Chat from "../Chat/Chat";
+import "../../styles/global.scss";
 
-const App = () => {
-  const [currentUser, setCurrentUser] = React.useState();
-  const [contact, setContact] = React.useState();
-
+const App = (props) => {
   return (
-    <section className="chat">
-      <header className="chat__header">
-        <h1>Chat</h1>
-        <Register setCurrentUser={setCurrentUser} setContact={setContact} />
-      </header>
-
-      <UsersList
-        currentUser={currentUser}
-        setCurrentUser={setCurrentUser}
-        contact={contact}
-        setContact={setContact}
-      />
-
-      <Conversation currentUser={currentUser} contact={contact} />
-    </section>
+    <div className="app">
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" component={<Home />} />
+          <Route exact path="/chat" element={<Chat />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 };
 

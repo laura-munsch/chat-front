@@ -28,15 +28,17 @@ const UsersList = (props) => {
       <h2 className="users-list__contacts-title">Contacts</h2>
 
       <ul className="users-list__list">
-        {users.map((user) => (
-          <li
-            key={user.id}
-            className="users-list__item"
-            onClick={() => props.setContact(user)}
-          >
-            <User user={user} isContact={props.contact === user} />
-          </li>
-        ))}
+        {users
+          .filter((user) => user.id !== props.currentUser.id)
+          .map((user) => (
+            <li
+              key={user.id}
+              className="users-list__item"
+              onClick={() => props.setContact(user)}
+            >
+              <User user={user} isContact={props.contact === user} />
+            </li>
+          ))}
       </ul>
     </aside>
   );

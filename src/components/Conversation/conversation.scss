@@ -3,6 +3,7 @@
 .conversation {
   background-color: $white;
   border-radius: 15px;
+  margin-bottom: $main-padding;
   padding: 35px;
 
   &__message {

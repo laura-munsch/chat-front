@@ -1,5 +1,8 @@
+@import "../../styles/variables";
+
 .users-list {
-  padding-right: 40px;
+  overflow-y: auto;
+  padding-right: $main-padding;
 
   &__current-user-title {
     font-size: 1rem;
@@ -15,7 +18,7 @@
   &__list {
     list-style: none;
     margin: 0;
-    padding: 0;
+    padding: 0 0 $main-padding;
   }
 
   &__item {

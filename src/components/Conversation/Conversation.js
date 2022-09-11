@@ -18,6 +18,8 @@ const Conversation = (props) => {
     let user1 = props.currentUser?.id;
     let user2 = props.contact?.id;
 
+    setConversation([]);
+
     if (user1 && user2) {
       axios
         .get(

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import "./register.scss";
 
 const Register = (props) => {
   const [errors, setErrors] = React.useState([]);
@@ -33,30 +34,49 @@ const Register = (props) => {
   };
 
   return (
-    <div>
-      <h2>Inscription</h2>
-
+    <div className="register">
       {errors.map((error, key) => (
-        <p key={key}>{error}</p>
+        <p key={key} className="register__error">
+          {error}
+        </p>
       ))}
 
-      <form onSubmit={createUser}>
-        <label>
+      <h2 className="register__title">Inscription</h2>
+
+      <form onSubmit={createUser} className="register__form">
+        <label className="register__label">
           Prénom
-          <input type="text" id="firstname" required />
+          <input
+            type="text"
+            id="firstname"
+            required
+            className="register__field"
+          />
         </label>
 
-        <label>
+        <label className="register__label">
           Nom
-          <input type="text" id="name" required />
+          <input type="text" id="name" required className="register__field" />
         </label>
 
-        <label>
-          N° de téléphone
-          <input type="tel" id="phone" required />
+        <label className="register__label">
+          Téléphone
+          <input
+            type="tel"
+            id="phone"
+            required
+            className={`register__field ${
+              errors.length > 0 && "register__field--error"
+            }`}
+          />
         </label>
 
-        <input type="submit" id="submit_button" />
+        <input
+          type="submit"
+          id="submit_button"
+          className="register__button"
+          value="S'inscrire"
+        />
       </form>
     </div>
   );

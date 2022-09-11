@@ -12,7 +12,7 @@ const App = () => {
     <section className="chat">
       <header className="chat__header">
         <h1>Chat</h1>
-        <Register setCurrentUser={setCurrentUser} />
+        <Register setCurrentUser={setCurrentUser} setContact={setContact} />
       </header>
 
       <UsersList

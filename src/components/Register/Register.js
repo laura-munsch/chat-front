@@ -21,6 +21,7 @@ const Register = (props) => {
       })
       .then((response) => {
         props.setCurrentUser(response.data);
+        props.setContact();
         e.target.reset();
       })
       .catch((error) => {

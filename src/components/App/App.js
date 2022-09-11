@@ -8,7 +8,7 @@ const App = (props) => {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" component={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/chat" element={<Chat />} />
         </Routes>
       </BrowserRouter>

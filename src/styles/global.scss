@@ -24,3 +24,44 @@ h3 {
   font-size: 1.3rem;
   font-weight: 400;
 }
+
+form {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  border-radius: 15px;
+  display: block;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="submit"] {
+  background-color: $white;
+  border: 1px solid $white;
+  color: inherit;
+  margin-top: 5px;
+  outline: none;
+  padding: 5px 10px;
+
+  &:focus {
+    border-color: $dark-blue;
+    outline: none;
+  }
+}
+
+input[type="submit"] {
+  background-color: $red;
+  border: 1px solid $red;
+  color: $white;
+  padding: 5px 20px;
+  width: auto;
+
+  &:hover {
+    background-color: $dark-blue;
+    border-color: $dark-blue;
+  }
+}

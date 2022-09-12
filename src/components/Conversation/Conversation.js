@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+import SendMessage from "../SendMessage/SendMessage";
 import "./conversation.scss";
 
 const Conversation = (props) => {
@@ -42,18 +43,32 @@ const Conversation = (props) => {
 
   return (
     <main className="conversation">
-      <p className="conversation__error">{error}</p>
+      <div className="conversation__messages">
+        <p className="conversation__error">{error}</p>
 
-      {conversation.map((message) => (
-        <p
-          key={message.id}
-          className={`conversation__message ${isSentByCurrentUser(
-            message.sender_id
-          )} `}
-        >
-          {message.content}
-        </p>
-      ))}
+        {conversation.map((message) => (
+          <p
+            key={message.id}
+            className={`conversation__message ${isSentByCurrentUser(
+              message.sender_id
+            )} `}
+          >
+            {message.content}
+          </p>
+        ))}
+      </div>
+
+      {props.contact && (
+        <div className="conversation__send-message">
+          <SendMessage
+            senderId={props.currentUser.id}
+            recipientId={props.contact.id}
+            conversation={conversation}
+            setConversation={setConversation}
+            setError={setError}
+          />
+        </div>
+      )}
     </main>
   );
 };

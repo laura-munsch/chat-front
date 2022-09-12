@@ -1,0 +1,9 @@
+@import "../../styles/variables";
+
+.send-message {
+  .send-message__input {
+    background-color: $light-blue;
+    flex-grow: 1;
+    margin: 0;
+  }
+}

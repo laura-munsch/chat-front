@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+.conversation {
+  background-color: $white;
+  border-radius: 15px;
+  margin-bottom: $main-padding;
+  padding-bottom: 107px;
+  position: relative;
+
+  &__error {
+    margin: 0;
+  }
+
+  &__messages {
+    box-sizing: border-box;
+    height: 100%;
+    padding: 35px;
+    overflow-y: auto;
+  }
+
+  &__message {
+    background-color: $beige;
+    border-radius: 40px;
+    margin-bottom: 5px;
+    margin-top: 0;
+    padding: 20px 30px;
+    width: fit-content;
+
+    &--sent {
+      background-color: $dark-blue;
+      color: $white;
+      margin-left: auto;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__send-message {
+    border-top: 1px solid $light-blue;
+    box-sizing: border-box;
+    left: 0;
+    bottom: 0;
+    padding: 35px;
+    position: absolute;
+    width: 100%;
+  }
+}

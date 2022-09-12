@@ -1,0 +1,32 @@
+@import "../../styles/variables";
+
+.home {
+  display: grid;
+  height: 100vh;
+  place-content: center;
+
+  &__container {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  &__content {
+    line-height: 150%;
+    margin-bottom: 80px;
+  }
+
+  &__link {
+    background-color: $red;
+    border-radius: 30px;
+    color: $white;
+    display: inline-block;
+    padding: 15px 25px;
+    text-decoration: none;
+    width: auto;
+
+    &:hover {
+      background-color: $dark-blue;
+      border-color: $dark-blue;
+    }
+  }
+}
